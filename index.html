@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>@its_tenik</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
       color: white;
       display: flex;
       flex-direction: column;
@@ -28,13 +28,7 @@
 
     h1 {
       font-size: 28px;
-      margin-bottom: 5px;
-    }
-
-    p {
-      font-size: 15px;
-      color: #ccc;
-      margin-bottom: 30px;
+      margin-bottom: 15px;
     }
 
     .link {
@@ -70,6 +64,12 @@
       max-width: 450px;
     }
 
+    .footer-note {
+      margin-top: 30px;
+      font-size: 13px;
+      color: #eee;
+    }
+
     @media (max-width: 500px) {
       .link {
         font-size: 16px;
@@ -79,10 +79,8 @@
 </head>
 <body>
 
-  <!-- 👤 Profilový obrázok -->
   <img class="avatar" src="https://avatars.githubusercontent.com/u/139526400?v=4" alt="Profilový obrázok">
   <h1>@its_tenik</h1>
-  <p>Vitaj na mojom oficiálnom linkhub-e</p>
 
   <div class="container">
     <a class="link" href="https://www.youtube.com/@Its_tenik" target="_blank">
@@ -94,10 +92,29 @@
     <a class="link" href="https://x.com/its_tenik" target="_blank">
       <img class="icon" src="https://simpleicons.org/icons/x.svg" alt="X"> X (Twitter)
     </a>
+    <a class="link" href="https://www.instagram.com/tenikjetu/" target="_blank">
+      <img class="icon" src="https://simpleicons.org/icons/instagram.svg" alt="Instagram"> Instagram
+    </a>
     <a class="link" href="https://www.twitch.tv/its_tenik" target="_blank">
       <img class="icon" src="https://simpleicons.org/icons/twitch.svg" alt="Twitch"> Twitch
     </a>
+    <a class="link" href="mailto:spolupracatenik@gmail.com" target="_blank">
+      <img class="icon" src="https://simpleicons.org/icons/gmail.svg" alt="Email"> Spolupráca
+    </a>
   </div>
+
+  <div class="footer-note" id="skyblock-networth">
+    💎 Hypixel SkyBlock networth (its_tenik): načítavam...
+  </div>
+
+  <script>
+    // Voliteľne môžeš nahradiť týmto volanie API
+    // Tu len simulujeme dynamickú hodnotu
+    setTimeout(() => {
+      document.getElementById("skyblock-networth").innerText =
+        "💎 Hypixel SkyBlock networth (its_tenik): ~2.4B coins";
+    }, 1000);
+  </script>
 
 </body>
 </html>
