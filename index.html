@@ -108,12 +108,33 @@
   </div>
 
   <script>
-    // Voliteľne môžeš nahradiť týmto volanie API
-    // Tu len simulujeme dynamickú hodnotu
-    setTimeout(() => {
-      document.getElementById("skyblock-networth").innerText =
-        "💎 Hypixel SkyBlock networth (its_tenik): ~2.4B coins";
-    }, 1000);
+    async function fetchNetworth() {
+      const networthElement = document.getElementById("skyblock-networth");
+      try {
+        const response = await fetch('https://sky.shiiyu.moe/api/v2/profile/its_tenik');
+        if (!response.ok) throw new Error("Chyba pri načítaní API");
+        const data = await response.json();
+
+        const networth = data.networth_overview?.networth;
+
+        if(networth) {
+          const formatted = networth >= 1e9
+            ? (networth / 1e9).toFixed(2) + "B coins"
+            : networth >= 1e6
+              ? (networth / 1e6).toFixed(2) + "M coins"
+              : networth.toLocaleString() + " coins";
+
+          networthElement.textContent = `💎 Hypixel SkyBlock networth (its_tenik): ~${formatted}`;
+        } else {
+          networthElement.textContent = "💎 Networth nie je dostupný";
+        }
+      } catch (e) {
+        networthElement.textContent = "💎 Chyba pri načítaní networthu";
+        console.error(e);
+      }
+    }
+
+    fetchNetworth();
   </script>
 
 </body>
