@@ -2,45 +2,94 @@
 <html lang="sk">
 <head>
   <meta charset="UTF-8">
-  <title>Moje odkazy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@its_tenik</title>
   <style>
+    :root {
+      --bg-light: #f4f4f4;
+      --bg-dark: #1a1a1a;
+      --link-light: #ffffff;
+      --link-dark: #222222;
+      --hover-color: #888888;
+    }
+
     body {
-      background-color: #111;
-      color: white;
-      font-family: Arial, sans-serif;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 20px;
+      padding: 30px 20px;
+      background-color: var(--bg-light);
+      color: black;
+      transition: background 0.3s, color 0.3s;
     }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: var(--bg-dark);
+        color: white;
+      }
+
+      .link {
+        background-color: var(--link-dark);
+        color: white;
+      }
+    }
+
     h1 {
+      font-size: 26px;
       margin-bottom: 30px;
     }
+
     .link {
-      background-color: #222;
-      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      gap: 12px;
       text-decoration: none;
-      padding: 15px 25px;
-      margin: 10px;
-      border-radius: 8px;
-      width: 90%;
+      background-color: var(--link-light);
+      color: black;
+      padding: 14px 18px;
+      margin: 10px 0;
+      border-radius: 10px;
+      width: 100%;
       max-width: 400px;
-      text-align: center;
-      font-size: 18px;
-      transition: background 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: background-color 0.2s, transform 0.2s;
     }
+
     .link:hover {
-      background-color: #333;
+      background-color: var(--hover-color);
+      transform: scale(1.01);
+    }
+
+    .icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 450px;
     }
   </style>
 </head>
 <body>
-  <h1>🌐 Moje odkazy</h1>
-  <a class="link" href="https://youtube.com" target="_blank">📺 YouTube</a>
-  <a class="link" href="https://discord.com" target="_blank">💬 Discord</a>
-  <a class="link" href="https://spotify.com" target="_blank">🎵 Spotify</a>
-  <a class="link" href="https://instagram.com" target="_blank">📸 Instagram</a>
+  <h1>@its_tenik</h1>
+  <div class="container">
+    <a class="link" href="https://www.youtube.com/@Its_tenik" target="_blank">
+      <img class="icon" src="https://simpleicons.org/icons/youtube.svg" alt="YouTube"> YouTube
+    </a>
+    <a class="link" href="https://www.tiktok.com/@its_tenik" target="_blank">
+      <img class="icon" src="https://simpleicons.org/icons/tiktok.svg" alt="TikTok"> TikTok
+    </a>
+    <a class="link" href="https://x.com/its_tenik" target="_blank">
+      <img class="icon" src="https://simpleicons.org/icons/x.svg" alt="X (Twitter)"> X (Twitter)
+    </a>
+    <a class="link" href="https://www.twitch.tv/its_tenik" target="_blank">
+      <img class="icon" src="https://simpleicons.org/icons/twitch.svg" alt="Twitch"> Twitch
+    </a>
+  </div>
 </body>
 </html>
-
